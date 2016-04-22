@@ -9,7 +9,7 @@ package com.yogi.code.exercise.validator;
 public class EntryValidator {
 	
 	public boolean validate(String entry) {
-		return true;
+		return entry.matches("[RGB]\\d_\\d") ? true : false;
 	}
 	
 }
