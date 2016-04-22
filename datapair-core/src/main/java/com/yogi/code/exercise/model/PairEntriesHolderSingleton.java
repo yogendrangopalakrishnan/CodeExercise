@@ -5,6 +5,12 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 
 import com.yogi.code.exercise.enums.RGBEnum;
 
+/*
+ * A singleton to hold all the models within the code.
+ * @author Yogendran Gopalakrishnan -- yogendran_g@programmer.net
+ * 
+ */
+
 public class PairEntriesHolderSingleton {
 	
 	private static final ConcurrentLinkedDeque<String> REntryHolder = new ConcurrentLinkedDeque<String> ();

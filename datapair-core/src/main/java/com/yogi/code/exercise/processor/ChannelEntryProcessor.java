@@ -6,6 +6,11 @@ import com.yogi.code.exercise.strategy.IExecutionStrategy;
 import com.yogi.code.exercise.strategy.SynchronousExecutionStrategy;
 import com.yogi.code.exercise.validator.EntryValidator;
 
+/*
+ * A singleton processor which composes a strategy for execution.
+ * @author Yogendran Gopalakrishnan -- yogendran_g@programmer.net
+ * 
+ */
 
 public class ChannelEntryProcessor {
 	

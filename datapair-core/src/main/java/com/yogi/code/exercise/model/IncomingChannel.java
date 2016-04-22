@@ -3,6 +3,12 @@ package com.yogi.code.exercise.model;
 import com.yogi.code.exercise.enums.ChannelEnum;
 import com.yogi.code.exercise.processor.ChannelEntryProcessor;
 
+/*
+ * Class which simulates a channel. This class is populated by the populator thread.
+ * @author Yogendran Gopalakrishnan -- yogendran_g@programmer.net
+ * 
+ */
+
 public class IncomingChannel {	
 	
 	private static final ChannelEntryProcessor processor = ChannelEntryProcessor.getInstance();

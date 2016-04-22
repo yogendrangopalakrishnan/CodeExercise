@@ -54,6 +54,13 @@ public enum RGBEnum {
 	public static RGBEnum getRootRGB(String entry) {
 		return RGBEnum.valueOf(entry.substring(0, 1));
 	}
+
+	/**
+	 * @return the value
+	 */
+	public String getValue() {
+		return value;
+	}
 	
 
 }

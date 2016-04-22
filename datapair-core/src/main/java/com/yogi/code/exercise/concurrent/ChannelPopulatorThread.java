@@ -5,6 +5,12 @@ import java.util.Random;
 
 import com.yogi.code.exercise.model.IncomingChannel;
 
+/*
+ * Thread used to randomly populate the channel with random wait times.
+ * @author Yogendran Gopalakrishnan -- yogendran_g@programmer.net
+ * 
+ */
+
 public class ChannelPopulatorThread extends Thread {
 	
 	private final IncomingChannel channel;

@@ -1,5 +1,11 @@
 package com.yogi.code.exercise.strategy;
 
+/*
+ * Handles the incoming entries from the processor in a synchronous manner.
+ * @author Yogendran Gopalakrishnan -- yogendran_g@programmer.net
+ * 
+ */
+
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 import com.yogi.code.exercise.enums.RGBEnum;
@@ -32,9 +38,13 @@ public class SynchronousExecutionStrategy implements IExecutionStrategy {
 				System.out.println("SynchronousExecutionStrategy :: Adding entry " + entry + " to queue ");
 				queueForRootRGB.add(entry);
 			} else {
+				//Remove the entry now that it has been paired.
 				queueForRootRGB.poll();
-				System.out.println("SynchronousExecutionStrategy :: Pairing " + entry + " with " + dequeHeadAsString);
-				pairStringToReturn = "{" + entry + "," + dequeHeadAsString + "}";
+				
+				pairStringToReturn = enumAtHand.getValue().endsWith("1") ? 
+						"{" + entry + "," + dequeHeadAsString + "}" : "{" + dequeHeadAsString + "," + entry + "}";
+				
+				System.out.println("SynchronousExecutionStrategy :: Found Pair " + pairStringToReturn);
 			}	
 		} else {
 			System.out.println("SynchronousExecutionStrategy :: Adding entry " + entry + " to queue ");
