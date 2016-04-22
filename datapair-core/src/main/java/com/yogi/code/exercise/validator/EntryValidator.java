@@ -5,5 +5,5 @@ public class EntryValidator {
 	public boolean validate(String entry) {
 		return true;
 	}
-
+	
 }

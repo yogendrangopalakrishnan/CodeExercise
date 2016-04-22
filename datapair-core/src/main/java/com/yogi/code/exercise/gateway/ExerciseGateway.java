@@ -1,6 +1,6 @@
 package com.yogi.code.exercise.gateway;
 
-import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.Collection;
 
 import com.yogi.code.exercise.concurrent.ChannelPopulatorThread;
 import com.yogi.code.exercise.enums.ChannelEnum;
@@ -31,10 +31,8 @@ public class ExerciseGateway {
 		@Override
 		public void run() {
 			
-			ChannelEntryProcessor processor = ChannelEntryProcessor.getInstance();
-			
 			//Print List of all incoming and accepted entries
-			ConcurrentLinkedDeque<String> IncomingEntriesQueue = processor.getIncomingentriesqueue();
+			Collection<String> IncomingEntriesQueue = ChannelEntryProcessor.getIncomingentriesqueue();
 			
 			String inputEntriesInSequence = "";
 			for (String entry : IncomingEntriesQueue) {
@@ -43,8 +41,8 @@ public class ExerciseGateway {
 			
 			System.out.println("Incoming and accepted entries in sequence " + inputEntriesInSequence);
 			
-			//List of all pairs matched so far
-			ConcurrentLinkedDeque<String> matchedEntriesQueue = processor.getMatchedentriesqueue();
+			//Print list of all pairs matched so far
+			Collection<String> matchedEntriesQueue = ChannelEntryProcessor.getMatchedentriesqueue();
 			
 			String pairEntriesInSequence = "";
 			for (String entry : matchedEntriesQueue) {

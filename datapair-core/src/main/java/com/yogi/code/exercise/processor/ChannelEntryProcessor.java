@@ -3,14 +3,14 @@ package com.yogi.code.exercise.processor;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 import com.yogi.code.exercise.strategy.IExecutionStrategy;
-import com.yogi.code.exercise.strategy.SingleThreadSynchronousExecutionStrategy;
+import com.yogi.code.exercise.strategy.SynchronousExecutionStrategy;
 import com.yogi.code.exercise.validator.EntryValidator;
 
 
 public class ChannelEntryProcessor {
 	
 	//In the real world, this would have been injected based on need
-	private IExecutionStrategy strategy = new SingleThreadSynchronousExecutionStrategy();
+	private IExecutionStrategy strategy = new SynchronousExecutionStrategy();
 	
 	//List of all incoming and accepted entries
 	private static final ConcurrentLinkedDeque<String> IncomingEntriesQueue = new ConcurrentLinkedDeque<String>();

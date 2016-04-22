@@ -5,8 +5,6 @@ import com.yogi.code.exercise.processor.ChannelEntryProcessor;
 
 public class IncomingChannel {	
 	
-	
-	
 	private static final ChannelEntryProcessor processor = ChannelEntryProcessor.getInstance();
 	
 	private ChannelEnum channel;
@@ -21,9 +19,8 @@ public class IncomingChannel {
 		try {
 			processor.validateAndAccept(entry);
 		} catch (Exception ex) {
-			System.out.println("There was an exception ");
-		}
-		
+			System.out.println("There was an exception processing entry. Validate contents." + ex.getLocalizedMessage());
+		}		
 	}
 
 	/**
