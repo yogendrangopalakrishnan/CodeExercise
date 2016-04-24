@@ -122,11 +122,6 @@ public class SynchronousExecutionStrategyTest {
 		
 		Object[] queueAsArray = PairEntriesHolderSingleton.getInstance().getQueueForRootRGB(RGBEnum.G).toArray();
 		
-		for(int i =0; i < queueAsArray.length ; i++) {
-			String entryAtHand = (String) queueAsArray[i];
-			System.out.println("CHECK :: " + entryAtHand);
-		}
-
 	}
 	
 	private static boolean validateCorrectRGBEntriesInQueue(ConcurrentLinkedDeque<String> testQueue, RGBEnum checkForEnum) {
