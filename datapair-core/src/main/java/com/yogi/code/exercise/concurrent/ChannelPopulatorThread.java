@@ -6,7 +6,8 @@ import java.util.Random;
 import com.yogi.code.exercise.model.IncomingChannel;
 
 /*
- * Thread used to randomly populate the channel with random wait times.
+ * Thread used to randomly populate the channel with random wait times thus simulating actual
+ * inflow into a streaming channel.
  * @author Yogendran Gopalakrishnan -- yogendran_g@programmer.net
  * 
  */

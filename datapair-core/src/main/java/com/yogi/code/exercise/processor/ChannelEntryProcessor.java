@@ -25,7 +25,7 @@ public class ChannelEntryProcessor {
 	
 	private EntryValidator validator = new EntryValidator();
 	
-	private ChannelEntryProcessor () {
+	protected ChannelEntryProcessor () {
 		//Private constructor for singleton
 	}
 	
@@ -38,12 +38,14 @@ public class ChannelEntryProcessor {
 	}
 	
 	public void validateAndAccept(String entry) throws Exception {
-		validator.validate(entry);
-		IncomingEntriesQueue.add(entry);
-		String pair = strategy.execute(entry);
-		
-		if (pair != null) {
-			matchedEntriesQueue.add(pair);
+		if (EntryValidator.validate(entry))
+		{
+			IncomingEntriesQueue.add(entry);
+			String pair = strategy.execute(entry);
+			
+			if (pair != null) {
+				matchedEntriesQueue.add(pair);
+			}
 		}
 	}
 

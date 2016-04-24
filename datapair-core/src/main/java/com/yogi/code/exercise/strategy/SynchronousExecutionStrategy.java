@@ -2,6 +2,14 @@ package com.yogi.code.exercise.strategy;
 
 /*
  * Handles the incoming entries from the processor in a synchronous manner.
+ * All the entries for R1 or R2 will be in the same queue. 
+ * 
+ * Pseudo code:
+ * 1. Peek first entry in the root RGB queue
+ * 2. If current incoming entry is R1 then check if head is R2
+ * 3. If R2 then add generate pair, pop the entry
+ * 4. If not R2 then add the current R1 into the queue
+ * 
  * @author Yogendran Gopalakrishnan -- yogendran_g@programmer.net
  * 
  */
@@ -29,6 +37,7 @@ public class SynchronousExecutionStrategy implements IExecutionStrategy {
 		ConcurrentLinkedDeque<String> queueForRootRGB = 
 				PairEntriesHolderSingleton.getInstance().getQueueForRootRGB(rootRGBAtHand);
 		
+		//Check the first entry to decide if incoming entry is paired or enqueued
 		String dequeHeadAsString = queueForRootRGB.peek();
 		
 		if (dequeHeadAsString != null) {
